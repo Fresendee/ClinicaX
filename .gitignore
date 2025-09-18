@@ -1,0 +1,10 @@
+# Arquivos de build
+bin/
+*.class
+*.jar
+
+# VS Code
+.vscode/
+
+# Outros
+*.log
