@@ -24,21 +24,20 @@ public class ClinicaUI {
     private void initialize() {
         frame = new JFrame("CLINICAX - Sistema da Clínica");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 600);
+        frame.setSize(950, 600);
         frame.setLayout(new BorderLayout());
 
-        // ===== Topo com logo / nome da clínica =====
+        // ===== Topo com nome da clínica =====
         JPanel painelTopo = new JPanel();
         painelTopo.setBackground(new Color(52, 152, 219));
         JLabel lblTitulo = new JLabel("CLINICAX");
-        lblTitulo.setFont(new Font("Arial", Font.BOLD, 32));
+        lblTitulo.setFont(new Font("Arial", Font.BOLD, 36));
         lblTitulo.setForeground(Color.WHITE);
         painelTopo.add(lblTitulo);
         frame.add(painelTopo, BorderLayout.NORTH);
 
         // ===== Painel de controle =====
-        JPanel painelControle = new JPanel();
-        painelControle.setLayout(new GridLayout(2, 1));
+        JPanel painelControle = new JPanel(new GridLayout(2, 1));
 
         // Linha 1: seleção médico e atualizar
         JPanel linha1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -48,7 +47,8 @@ public class ClinicaUI {
             comboMedicos.addItem(a.getMedico());
         }
         linha1.add(comboMedicos);
-        btnAtualizar = new JButton("Atualizar Agenda");
+
+        btnAtualizar = new JButton("Atualizar Agenda", UIManager.getIcon("FileView.directoryIcon"));
         btnAtualizar.setBackground(new Color(46, 204, 113));
         btnAtualizar.setForeground(Color.WHITE);
         btnAtualizar.setFocusPainted(false);
@@ -74,14 +74,14 @@ public class ClinicaUI {
         txtTelefone = new JTextField(6);
         linha2.add(txtTelefone);
 
-        btnAdicionar = new JButton("Adicionar");
+        btnAdicionar = new JButton("Adicionar", UIManager.getIcon("FileChooser.newFolderIcon"));
         btnAdicionar.setBackground(new Color(52, 152, 219));
         btnAdicionar.setForeground(Color.WHITE);
         btnAdicionar.setFocusPainted(false);
         btnAdicionar.addActionListener(e -> adicionarPaciente());
         linha2.add(btnAdicionar);
 
-        btnRemover = new JButton("Remover (CPF)");
+        btnRemover = new JButton("Remover (CPF)", UIManager.getIcon("OptionPane.errorIcon"));
         btnRemover.setBackground(new Color(231, 76, 60));
         btnRemover.setForeground(Color.WHITE);
         btnRemover.setFocusPainted(false);
@@ -91,7 +91,7 @@ public class ClinicaUI {
         txtPesquisa = new JTextField(6);
         linha2.add(txtPesquisa);
 
-        btnPesquisar = new JButton("Pesquisar");
+        btnPesquisar = new JButton("Pesquisar", UIManager.getIcon("FileView.fileIcon"));
         btnPesquisar.setBackground(new Color(241, 196, 15));
         btnPesquisar.setFocusPainted(false);
         btnPesquisar.addActionListener(e -> pesquisarPaciente());
