@@ -2,6 +2,8 @@ package com.clinicax.models;
 
 import java.util.List;
 
+import com.clinicax.dao.MedicoDAO;
+
 public class Main {
     public static void main(String[] args) {
         Medico m1 = new Medico("Olival", "0001", "Oftalmologista");
@@ -29,5 +31,30 @@ public class Main {
         a4.adcionar(p6);
 
         ClinicaUI.abrirUI(List.of(a1, a2, a3, a4));
+
+         MedicoDAO dao = new MedicoDAO();
+        dao.inserirMedico("Dr. João Silva", "Cardiologia");
+        dao.inserirMedico("Dra. Maria Souza", "Pediatria");
+        dao.listarMedicos();
     }
-} 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
